@@ -1,27 +1,187 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Forever Proposal</title>
+    <style>
+        body {
+            background-color: #ffe6e6;
+            font-family: 'Georgia', serif;
+            text-align: center;
+            padding-top: 100px;
+        }
+
+        h1 {
+            font-size: 3.5em;
+            color: #cc0052;
+            font-weight: bold;
+        }
+
+        h2 {
+            font-size: 2.2em;
+            color: #cc3399;
+            margin-top: 20px;
+        }
+
+        p {
+            font-size: 1.5em;
+            color: #993366;
+        }
+
+        #buttons {
+            margin-top: 50px;
+        }
+
+        .btn {
+            padding: 15px 50px;
+            font-size: 1.7em;
+            margin: 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 20px;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        #yesBtn {
+            background-color: #ff6699;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        #noBtn {
+            background-color: #ff4d4d;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        /* Love theme after clicking yes */
+        .love-theme {
+            background-color: #ffe6e6;
+            color: white;
+        }
+
+        .heart {
+            font-size: 100px;
+            color: red;
+            animation: pulse 1s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        /* Romantic lines animation */
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        .romantic-text {
+            font-size: 1.8em;
+            color: #b30047;
+            animation: fadeIn 2s ease;
+        }
+
+        /* Heart animation */
+        .hearts-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 40px;
+        }
+
+        .heart {
+            font-size: 50px;
+            color: #ff6666;
+            margin: 0 10px;
+            animation: bounce 1.5s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* Footer styles */
+        footer {
+            margin-top: 100px;
+            font-size: 1em;
+            color: #993366;
+        }
+
+        footer a {
+            color: #cc3399;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            color: #cc0052;
+        }
+    </style>
+</head>
 <body>
 
-<pre style="font:monospace">
-           ,())))),    Welcome to SHAM site!
-         ,()))))))),.  I hope you enjoy your     ,---,,,_
-         ()))))))//((\ time here. Feel free   (         ))
-        (\\( \))( \(/) to explore and learn! (            )
-        /(          \\   We have lots of       (            )
-        //       _   \   interesting stuff     (_(_((((     )
-        //   \  /    \   /                     (    , \    )
-        \   (.  .    \  /                      |   /   )   )
-        (,     |    ,)    Stay curious and     |\ /    (   )
-         \   ^\/^   /   have fun!              (.(.)    S  )
-         \          /   Happy browsing!        /_       \ )
-          \ (-<>-) /                   \      /__)   ^   \/
-           \  --  /                     ----   /____/    |
-            \ __ /                             )______    |
-             |  |                                     \   |
-          __-|__|-__                                __-\__|-__
-         (          )                              (          )
-         |_| Enjoy! |_|                              |_|      |_|
-         | | Your   | |                              | | Time! | |
-</pre>
+    <h1>Will You Be My Forever Love?</h1>
+    <h2>"You're the missing piece to my heart."</h2>
+    <p class="romantic-text">"Together is a beautiful place to be. Will you spend forever with me?"</p>
+    
+    <div id="buttons">
+        <button id="yesBtn" class="btn">Yes, I Do ❤️</button>
+        <button id="noBtn" class="btn">No 😢</button>
+    </div>
+
+    <div class="hearts-container">
+        <span class="heart">💖</span>
+        <span class="heart">💕</span>
+        <span class="heart">💞</span>
+    </div>
+
+    <footer>
+        <p>© 2024 SHAM. All Rights Reserved. Created by <strong>Ehtisham</strong>. 
+        <br>Connect with me on <a href="https://www.linkedin.com/in/ehtishamcyber/" target="_blank">LinkedIn</a></p>
+    </footer>
+
+    <script>
+        const yesBtn = document.getElementById('yesBtn');
+        const noBtn = document.getElementById('noBtn');
+        let yesBtnSize = 1.7;
+
+        // When Yes is clicked
+        yesBtn.addEventListener('click', function() {
+            document.body.innerHTML = `
+                <h1>She Said Yes! 💕</h1>
+                <h2>"You are my today and all of my tomorrows."</h2>
+                <p class="romantic-text">"A new chapter of love begins. I am forever yours."</p>
+                <div class="hearts-container">
+                    <span class="heart">💖</span>
+                    <span class="heart">💕</span>
+                    <span class="heart">💞</span>
+                    <span class="heart">💘</span>
+                </div>
+                <footer>
+                    <p>© 2024 SHAM. All Rights Reserved. Created by <strong>Ehtisham</strong>. 
+                    <br>Connect with me on <a href="https://www.linkedin.com/in/ehtishamcyber/" target="_blank">LinkedIn</a></p>
+                </footer>
+            `;
+            document.body.classList.add('love-theme');
+        });
+
+        // When No is clicked
+        noBtn.addEventListener('click', function() {
+            yesBtnSize += 0.5;
+            yesBtn.style.fontSize = `${yesBtnSize}em`;
+        });
+    </script>
 
 </body>
 </html>
