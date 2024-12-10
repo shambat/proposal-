@@ -1,192 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Forever Proposal</title>
-    <style>
-        body {
-            background-color: #ffe6e6;
-            font-family: 'Georgia', serif;
-            text-align: center;
-            padding-top: 100px;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HACKER SHAM</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+  <style>
+    /* Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Orbitron', sans-serif;
+      background: linear-gradient(135deg, #0f0f0f, #1c1c1c);
+      color: #fff;
+      overflow: hidden;
+    }
 
-        h1 {
-            font-size: 3.5em;
-            color: #cc0052;
-            font-weight: bold;
-        }
+    /* Animated Background */
+    .animated-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle, rgba(0, 119, 255, 0.2), transparent);
+      animation: pulse-bg 6s infinite;
+      z-index: -1;
+    }
 
-        h2 {
-            font-size: 2.2em;
-            color: #cc3399;
-            margin-top: 20px;
-        }
+    @keyframes pulse-bg {
+      0%, 100% {
+        transform: scale(1);
+        opacity: 0.8;
+      }
+      50% {
+        transform: scale(1.2);
+        opacity: 1;
+      }
+    }
 
-        p {
-            font-size: 1.5em;
-            color: #993366;
-        }
+    /* Main Container */
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+      padding: 0 2rem;
+    }
 
-        #buttons {
-            margin-top: 50px;
-        }
+    h1 {
+      font-size: 3.5rem;
+      text-shadow: 0 0 20px #00e6ff, 0 0 30px #0077ff;
+      margin-bottom: 1rem;
+      letter-spacing: 0.2rem;
+    }
 
-        .btn {
-            padding: 15px 50px;
-            font-size: 1.7em;
-            margin: 20px;
-            border: none;
-            cursor: pointer;
-            border-radius: 20px;
-            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
-        }
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      color: #bbb;
+    }
 
-        #yesBtn {
-            background-color: #ff6699;
-            color: white;
-            transition: all 0.3s ease;
-        }
+    /* Glowing Button */
+    .glow-button {
+      padding: 1rem 2.5rem;
+      font-size: 1.2rem;
+      color: #fff;
+      background: linear-gradient(90deg, #0077ff, #00e6ff);
+      border: none;
+      border-radius: 50px;
+      text-transform: uppercase;
+      cursor: pointer;
+      box-shadow: 0 0 15px #0077ff, 0 0 30px #00e6ff;
+      transition: all 0.3s ease;
+    }
 
-        #noBtn {
-            background-color: #ff4d4d;
-            color: white;
-            transition: all 0.3s ease;
-        }
+    .glow-button:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 30px #0077ff, 0 0 60px #00e6ff;
+    }
 
-        /* Love theme after clicking yes */
-        .love-theme {
-            background-color: #ffe6e6;
-            color: white;
-        }
+    /* Footer */
+    footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      text-align: center;
+      padding: 1rem 0;
+      background: rgba(0, 0, 0, 0.8);
+      font-size: 0.9rem;
+      color: #777;
+      z-index: 10;
+    }
 
-        .heart {
-            font-size: 100px;
-            color: red;
-            animation: pulse 1s infinite;
-        }
+    footer a {
+      color: #00e6ff;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
 
-        @keyframes pulse {
-            0% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.2);
-            }
-            100% {
-                transform: scale(1);
-            }
-        }
+    footer a:hover {
+      color: #0077ff;
+    }
 
-        /* Romantic lines animation */
-        @keyframes fadeIn {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
-        }
-
-        .romantic-text {
-            font-size: 1.8em;
-            color: #b30047;
-            animation: fadeIn 2s ease;
-        }
-
-        /* Heart animation */
-        .hearts-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 40px;
-        }
-
-        .heart {
-            font-size: 50px;
-            color: #ff6666;
-            margin: 0 10px;
-            animation: bounce 1.5s infinite;
-        }
-
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-
-        /* Footer styles */
-        footer {
-            margin-top: 100px;
-            font-size: 1em;
-            color: #993366;
-        }
-
-        footer a {
-            color: #cc3399;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        footer a:hover {
-            color: #cc0052;
-        }
-    </style>
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.5rem;
+      }
+      p {
+        font-size: 1rem;
+      }
+      .glow-button {
+        font-size: 1rem;
+        padding: 0.8rem 2rem;
+      }
+    }
+  </style>
 </head>
 <body>
+  <!-- Animated Background -->
+  <div class="animated-bg"></div>
 
-    <h1>Will You Be My Forever Love?</h1>
-    <h2>"You're the missing piece to my heart."</h2>
-    <p class="romantic-text">"Together is a beautiful place to be. Will you spend forever with me?"</p>
-    
-    <div id="buttons">
-        <button id="yesBtn" class="btn">Yes, I Do ❤️</button>
-        <button id="noBtn" class="btn">No 😢</button>
-    </div>
+  <!-- Main Content -->
+  <div class="container">
+    <h1>HACKER SHAM</h1>
+    <p>The Future of Cybersecurity Starts Here</p>
+    <button class="glow-button">Explore Now</button>
+  </div>
 
-    <div class="hearts-container">
-        <span class="heart">💖</span>
-        <span class="heart">💕</span>
-        <span class="heart">💞</span>
-    </div>
-
-    <footer>
-        <p>© 2024 SHAM. All Rights Reserved. Created by <strong>Ehtisham</strong>. 
-        <br>Connect with me on <a href="https://www.linkedin.com/in/ehtishamcyber/" target="_blank">LinkedIn</a></p>
-    </footer>
-
-    <script>
-        const yesBtn = document.getElementById('yesBtn');
-        const noBtn = document.getElementById('noBtn');
-        let yesBtnSize = 1.7;
-
-        // When Yes is clicked
-        yesBtn.addEventListener('click', function() {
-            document.body.innerHTML = `
-                <h1>She Said Yes! 💕</h1>
-                <h2>"You are my today and all of my tomorrows."</h2>
-                <p class="romantic-text">"A new chapter of love begins. I am forever yours."</p>
-                <div class="hearts-container">
-                    <span class="heart">💖</span>
-                    <span class="heart">💕</span>
-                    <span class="heart">💞</span>
-                    <span class="heart">💘</span>
-                </div>
-                <footer>
-                    <p>© 2024 SHAM. All Rights Reserved. Created by <strong>Ehtisham</strong>. 
-                    <br>Connect with me on <a href="https://www.linkedin.com/in/ehtishamcyber/" target="_blank">LinkedIn</a></p>
-                </footer>
-            `;
-            document.body.classList.add('love-theme');
-
-            // Reload the page after 8 seconds
-            setTimeout(function() {
-                location.reload();
-            }, 8000);
-        });
-
-        // When No is clicked
-        noBtn.addEventListener('click', function() {
-            yesBtnSize += 0.5;
-            yesBtn.style.fontSize = `${yesBtnSize}em`;
-        });
-    </script>
-
+  <!-- Footer -->
+  <footer>
+    &copy; 2024 <a href="#">HACKER SHAM</a>. All rights reserved.
+  </footer>
 </body>
 </html>
